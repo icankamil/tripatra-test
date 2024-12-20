@@ -92,7 +92,14 @@ export default function UserList(props: ProductListProps) {
                     payload={user}
                     setSelectedId={props.setSelectedId}
                   />
-                  <Button variant={"destructive"}>Delete</Button>
+                  <Button
+                    onClick={() => {
+                      props.delete(user.id);
+                    }}
+                    variant={"destructive"}
+                  >
+                    Delete
+                  </Button>
                 </TableCell>
               </TableRow>
             ))
@@ -105,8 +112,26 @@ export default function UserList(props: ProductListProps) {
                 <TableCell>{user.name}</TableCell>
                 <TableCell>{user.email}</TableCell>
                 <TableCell className="text-center">
-                  <Button>Edit</Button>
-                  <Button variant={"destructive"}>Delete</Button>
+                  <DialogPrompt
+                    name={props.name}
+                    setName={props.setName}
+                    email={props.email}
+                    setEmail={props.setEmail}
+                    add={props.update}
+                    open={props.open}
+                    setOpen={props.setOpen}
+                    edit={true}
+                    payload={user}
+                    setSelectedId={props.setSelectedId}
+                  />
+                  <Button
+                    onClick={() => {
+                      props.delete(user.id);
+                    }}
+                    variant={"destructive"}
+                  >
+                    Delete
+                  </Button>
                 </TableCell>
               </TableRow>
             ))

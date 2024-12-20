@@ -63,7 +63,7 @@ export default function Users(): JSX.Element {
   };
 
   const handleDeleteUser = async (id: string) => {
-    if (window.confirm("Are you sure you want to delete all users ?")) {
+    if (window.confirm("Are you sure you want to delete this users ?")) {
       await deleteUser({ variables: { id } });
     }
   };

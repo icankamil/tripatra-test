@@ -102,11 +102,11 @@ export default function ProductList(props: ProductListProps) {
             props.data.product &&
             props.data.product.length > 0 &&
             props.loading === false ? (
-            props.data.product.map((user) => (
-              <TableRow key={user.id}>
-                <TableCell>{user.name}</TableCell>
-                <TableCell>{user.price}</TableCell>
-                <TableCell>{user.stock}</TableCell>
+            props.data.product.map((product) => (
+              <TableRow key={product.id}>
+                <TableCell>{product.name}</TableCell>
+                <TableCell>{product.price}</TableCell>
+                <TableCell>{product.stock}</TableCell>
                 <TableCell className="text-center">
                   <Button>
                     <DialogPrompt
@@ -120,14 +120,14 @@ export default function ProductList(props: ProductListProps) {
                       open={props.open}
                       setOpen={props.setOpen}
                       edit={true}
-                      payload={user}
+                      payload={product}
                       setSelectedId={props.setSelectedId}
                     />
                   </Button>
                   <Button
                     variant={"destructive"}
                     onClick={() => {
-                      props.delete(user.id);
+                      props.delete(product.id);
                     }}
                   >
                     Delete

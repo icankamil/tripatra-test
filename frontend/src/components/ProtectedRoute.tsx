@@ -1,6 +1,6 @@
 // src/components/ProtectedRoute.tsx
 import React from "react";
-import { Route, Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { useAuth } from "@/context/index";
 
 const ProtectedRoute: React.FC<{ component: React.FC }> = ({
